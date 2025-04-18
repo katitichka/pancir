@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 import 'dart:math';
 
@@ -15,14 +14,14 @@ void main() {
     while (!flag) {
       int userNum = getNum();
       count += 1;
-      flag = sravn(userNum, randNum, count);
+      flag = compare(userNum, randNum, count);
     }
     playAgain = askToPlay();
   }
   print("Спасибо за игру!");
 }
 
-bool sravn(userNum, int randNum, int count) {
+bool compare(userNum, int randNum, int count) {
   if (userNum < randNum) {
     print("Слишком мало");
     return false;
