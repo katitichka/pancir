@@ -38,7 +38,12 @@ int getNum() {
   while (true) {
     stdout.write('Введи число: ');
     try {
-      return int.parse(stdin.readLineSync()!);
+      int input_num = int.parse(stdin.readLineSync()!);
+      if (input_num > 100 || input_num < 1) {
+        print("Введите число от 1 до 100");
+      } else {
+        return input_num;
+      }
     } catch (e) {
       print('Пожалуйста, введите корректное число!');
     }
